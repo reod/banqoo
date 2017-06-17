@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Participant, Participation } from './../../services/budget-participation/budget-participation.service';
 
 @Component({
@@ -9,5 +9,9 @@ import { Participant, Participation } from './../../services/budget-participatio
 export class ParticipantListComponent {
   @Input() expense: number;
   @Input() participants: Participant[];
-  constructor() {}
+  @Output() deleteParticipant: EventEmitter<Participant> = new EventEmitter<Participant>();
+  
+  delete(participant: Participant): void {
+    this.deleteParticipant.emit(participant);
+  }
 }

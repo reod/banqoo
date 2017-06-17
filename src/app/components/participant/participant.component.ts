@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Participant } from './../../services/budget-participation/budget-participation.service';
 
 
@@ -7,13 +7,13 @@ import { Participant } from './../../services/budget-participation/budget-partic
   templateUrl: './participant.component.html',
   styleUrls: ['./participant.component.css']
 })
-export class ParticipantComponent implements OnInit {
+export class ParticipantComponent {
 
   @Input() participant: Participant;
+  @Output() deleteParticipant: EventEmitter<Participant> = new EventEmitter<Participant>();
 
-  constructor() { }
-
-  ngOnInit() {
+  delete(participant: Participant): void {
+    this.deleteParticipant.emit(participant);
   }
 
 }

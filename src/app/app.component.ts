@@ -28,9 +28,8 @@ export class AppComponent implements OnInit, DoCheck {
   ) {}
 
   ngOnInit(): void {
-    this.countParticipation();
-    console.log(this.persistanceService.getSavedState())
     Object.assign(this, this.persistanceService.getSavedState());
+    this.countParticipation();
     this.stateRestored = true;
   }
 
@@ -59,6 +58,11 @@ export class AppComponent implements OnInit, DoCheck {
 
   addParticipant(participant: Participant): void {
     this.participants.push(participant);
+  }
+
+  deleteParticipant(participant: Participant): void {
+    const index = this.participants.indexOf(participant);
+    this.participants.splice(index, 1);
   }
 
 }

@@ -1,11 +1,16 @@
 <div style="text-align:center">
   <app-expense-form [(expense)]="expense"></app-expense-form>
-  <app-participant-list [(participants)]="participants">
+
+  <app-participant-list 
+    [(participants)]="participants" 
+    (deleteParticipant)="deleteParticipant($event)">
   </app-participant-list>
+
   <app-add-participant (newParticipant)="addParticipant($event)">
   </app-add-participant>
+
   <app-participation-summary
     [(expense)]="expense"
-    [(participations)]="participations"
-  ></app-participation-summary>
+    [(participations)]="participations">
+  </app-participation-summary>
 </div>
