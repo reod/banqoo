@@ -1,0 +1,5 @@
+<div>
+  <input type="text" [(ngModel)]="participant.name" placeholder="Imię" (keyup.enter)="addParticipant()" />
+  <input type="number" [(ngModel)]="participant.income" placeholder="Dochód" (keyup.enter)="addParticipant()" />
+  <button (click)="addParticipant()">+</button>
+</div>

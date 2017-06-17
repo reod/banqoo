@@ -1,0 +1,8 @@
+<div class="participation-summary">
+  Wydatek rzędu 
+  <strong>{{expense.value | plncurrency }}</strong> naley rozłozyć tak, ze
+  <span *ngFor="let participation of participations; let last = last;">
+    <ng-container *ngIf="last"> a </ng-container>
+    <strong>{{participation.participant.name}}</strong> płaci 
+    <strong>{{participation.participation | plncurrency}}</strong><ng-container *ngIf="!last">,</ng-container></span>.
+</div>
