@@ -8,7 +8,13 @@ import { Participation } from './../../services/budget-participation/budget-part
   styleUrls: ['./participation-summary.component.css']
 })
 export class ParticipationSummaryComponent {
-  @Input() expense: number;
+  @Input() expense: { value: number };
   @Input() participations: Participation[] = [];
-  constructor() { }
+  
+  canShowSummary(): boolean {
+    const min2Participations = this.participations.length >= 2;
+    const validExpense = this.expense && this.expense.value > 0;
+
+    return min2Participations && validExpense;
+  }
 }

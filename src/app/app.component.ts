@@ -42,8 +42,12 @@ export class AppComponent implements OnInit, DoCheck {
   }
 
   countParticipation(): void {
-    this.participations = this.bPService
-      .getParticipation(this.expense.value, this.participants);
+    try {
+      this.participations = this.bPService
+        .getParticipation(this.expense.value, this.participants);
+    } catch(e) {
+      this.participations = [];
+    }
   }
 
   saveAppState(): void {

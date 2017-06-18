@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { AddParticipantComponent } from './add-participant.component';
+import { Participant } from './../../services/budget-participation/budget-participation.service';
 
 describe('AddParticipantComponent', () => {
   let component: AddParticipantComponent;
@@ -8,7 +10,8 @@ describe('AddParticipantComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddParticipantComponent ]
+      declarations: [ AddParticipantComponent ],
+      imports: [ FormsModule ]
     })
     .compileComponents();
   }));

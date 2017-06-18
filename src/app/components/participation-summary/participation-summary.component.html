@@ -1,4 +1,4 @@
-<div class="participation-summary" *ngIf="participations.length >=2">
+<div class="participation-summary" *ngIf="canShowSummary()">
   Wydatek rzędu 
   <strong>{{expense.value | plncurrency }}</strong> należy rozłożyć tak, że
   <span *ngFor="let participation of participations; let last = last;  let first = first;">

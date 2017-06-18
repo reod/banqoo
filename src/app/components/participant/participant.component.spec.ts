@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { PlncurrencyPipe } from './../../pipes/plncurrency/plncurrency.pipe';
 
 import { ParticipantComponent } from './participant.component';
 
@@ -8,7 +9,7 @@ describe('ParticipantComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ParticipantComponent ]
+      declarations: [ ParticipantComponent, PlncurrencyPipe ]
     })
     .compileComponents();
   }));

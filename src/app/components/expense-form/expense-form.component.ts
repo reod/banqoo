@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./expense-form.component.css']
 })
 export class ExpenseFormComponent {
-  @Input() expense;
+  @Input() public expense;
   constructor() { }
 }

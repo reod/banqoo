@@ -4,7 +4,7 @@ import { AppState } from './../../app.component';
 @Injectable()
 export class PersistanceService {
 
-  private vesrion: string = '0.0.2';
+  private vesrion: string = '0.0.3';
   private key: string = 'app-state';
 
   getSavedState(): AppState {
