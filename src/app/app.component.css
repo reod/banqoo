@@ -1,0 +1,10 @@
+.app-wrapper {
+  width: 100%;
+}
+
+ @media (min-width: 768px) {
+   .app-wrapper {
+      width: 500px;
+      margin: 3em auto 0 auto; 
+   }
+}

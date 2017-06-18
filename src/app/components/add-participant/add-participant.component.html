@@ -1,5 +1,14 @@
-<div>
-  <input type="text" [(ngModel)]="participant.name" placeholder="Imię" (keyup.enter)="addParticipant()" />
-  <input type="number" [(ngModel)]="participant.income" placeholder="Dochód" (keyup.enter)="addParticipant()" />
-  <button (click)="addParticipant()">+</button>
+<div class="add-participant">
+  <input type="text" [(ngModel)]="participant.name" class="name form-input"
+    placeholder="Imię" (keyup.enter)="addParticipant()" #name />
+  <div class="input-group income">
+    <input type="number" [(ngModel)]="participant.income" class="form-input"
+      placeholder="Dochód" (keyup.enter)="addParticipant()" />
+    <span class="input-group-addon">zł.</span>
+  </div>
+  <div class="action">
+    <button (click)="addParticipant()" class="btn btn-primary btn-action btn-md">
+      <i class="icon icon-plus"></i>
+    </button>
+  </div>
 </div>

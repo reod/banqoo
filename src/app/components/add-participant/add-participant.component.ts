@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, ViewChild, EventEmitter } from '@angular/core';
 import { Participant } from './../../services/budget-participation/budget-participation.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { Participant } from './../../services/budget-participation/budget-partic
 })
 export class AddParticipantComponent {
   @Output() newParticipant: EventEmitter<Participant> = new EventEmitter<Participant>();
+  @ViewChild('name') nameInput;
   participant: Participant = <Participant> { name: '', income: null };
 
   constructor() { }
@@ -23,6 +24,7 @@ export class AddParticipantComponent {
 
     this.participant.name = '';
     this.participant.income = null;
+    this.nameInput.nativeElement.focus();
   }
 
 }

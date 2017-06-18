@@ -1,5 +1,9 @@
 <div class="participant">
-  <input type="text" [(ngModel)]="participant.name" class="name" />
-  <input type="number" [(ngModel)]="participant.income" class="income" />
-  <button (click)="delete(participant)">-</button>
+  <span class="name">{{participant.name}}</span>
+  <span class="income">{{participant.income | plncurrency}}</span>
+  <div class="action">
+    <button (click)="delete(participant)" class="btn btn-primary btn-action btn-md">
+      <i class="icon icon-minus"></i>
+    </button>
+  </div>
 </div>

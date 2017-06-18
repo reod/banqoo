@@ -1,4 +1,8 @@
 <div class="expense-form">
-  <span>Wydatek:</span>
-  <input type="number" [(ngModel)]="expense.value">
+  <p>Wpisz wydatek, który chcesz rozłożyć proporcjonalnie względem dochodów, a następnie dodaj udziałowców wraz z ich zarobkami:</p>
+  <div class="input-group">
+    <span class="input-group-addon">Wasz wydatek:</span>
+    <input type="number" [(ngModel)]="expense.value" class="form-input"/>
+    <span class="input-group-addon">zł.</span>
+  </div>
 </div>
